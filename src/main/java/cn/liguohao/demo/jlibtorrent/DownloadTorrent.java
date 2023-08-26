@@ -25,9 +25,7 @@ public final class DownloadTorrent {
     // }
 
     public static void main(String[] args) throws Throwable {
-        String ddlPathStr = System.getProperty("user.dir")
-            + File.separatorChar + "libs" + File.separatorChar + "jlibtorrent-1.2.19.0.dll";
-        System.load(ddlPathStr);
+        // add idea vm runtime config: -Djava.library.path=C:\Users\li-guohao\Documents\jlibtorrent-1.2.19.0\
 
         // comment this line for a real application
         // args = new String[]{"C:\\Users\\li-guohao\\Documents\\demos\\aea716b151b1e7e25a13a4c939f0b8f4cbf3a6a3.torrent"};
