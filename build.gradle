@@ -10,10 +10,24 @@ repositories {
 }
 
 dependencies {
+    implementation files('libs/jlibtorrent-1.2.19.0.jar')
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+task loadJlibtorrentDDL {
+//    println System.getProperty('user.dir');
+    String ddlPathStr = System.getProperty('user.dir') + File.separatorChar + "libs" + File.separatorChar + "jlibtorrent-1.2.19.0.dll";
+    print(ddlPathStr)
+    System.load(ddlPathStr);
 }
 
 test {
     useJUnitPlatform()
 }
+
+//build {
+//    tasks.getByName('compileJava').dependsOn('loadJlibtorrentDDL')
+//}
